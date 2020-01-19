@@ -14,9 +14,9 @@ public interface UserDao {
 	public void update(User user);
 	public void delete(User user);
 	
-	public List<Ad> findBoughtAd();
-	public List<Ad> findManagedAd();
-	public List<PaymentMethod> findPaymentMethods();
+	public List<Ad> findBoughtAd(User user);
+	public List<Ad> findManagedAd(User user);
+	public List<PaymentMethod> findPaymentMethods(User user);
 	
 	public void insertBoughtAd(User user, Integer id);
 	public void deleteBoughtAd(User user, Integer id);

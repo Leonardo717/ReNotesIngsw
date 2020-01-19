@@ -21,6 +21,7 @@ import it.unical.ingsw.siw.renotes.persistance.jdbc.CartDaoJDBC;
 import it.unical.ingsw.siw.renotes.persistance.jdbc.PaymentDaoJDBC;
 import it.unical.ingsw.siw.renotes.persistance.jdbc.PreviewDaoJDBC;
 import it.unical.ingsw.siw.renotes.persistance.jdbc.ReviewDaoJDBC;
+import it.unical.ingsw.siw.renotes.persistance.jdbc.UserDaoJDBC;
 import sun.security.pkcs11.Secmod.DbMode;
 
 public class DBManager {
@@ -64,7 +65,32 @@ public class DBManager {
 		method.setCvc(332);
 		method.setDefault(false);
 		
-		DBManager.getInstance().getPaymentMethodDao().update(method);
+		User utonto=new User();
+		utonto.setMail("gioran717@tortellino.it");
+		utonto.setUsername("GiovanniRana");
+		utonto.setPassword("rana");
+		Cart carrello=new Cart();
+		carrello.setId(1);
+		utonto.setCart(carrello);
+		
+		User u=new User();
+		u.setMail("leo717@gmail.com");
+		u.setUsername("Leonardo");
+		u.setPassword("leo");
+		Cart cart=new Cart();
+		cart.setId(2);
+		u.setCart(cart);
+		
+		/*List<PaymentMethod> p= DBManager.getInstance().getUserDao().findPaymentMethods(u);
+		for(PaymentMethod r : p)
+		{
+			System.out.println("ID Val: " + r.getCardNumber());
+		}*/
+		//DBManager.getInstance().getUserDao().deletePaymentMethods(u, "1000");
+		//DBManager.getInstance().getUserDao().insertPaymentMethods(u,"1000");
+		//DBManager.getInstance().getUserDao().insertBoughtAd(u, 1);
+		//DBManager.getInstance().getUserDao().deleteManagedAd(u, 2);
+		//DBManager.getInstance().getUserDao().insertManagedAd(u, 2);
 		
 		
 		//DBManager.getInstance().resetSerialPreview();
@@ -164,6 +190,11 @@ public class DBManager {
 	public AdDao getAdDao()
 	{
 		return new AdDaoJDBC(dataSource);
+	}
+	
+	public UserDao getUserDao()
+	{
+		return new UserDaoJDBC(dataSource);
 	}
 	
 	public void insertAd(Ad ad)
