@@ -28,7 +28,7 @@ public class DBManager {
 	public static void main(String[] args) {
 		
 		//DBManager.getInstance().findCarrelloProva();
-		Ad ad = new Ad();
+		/*Ad ad = new Ad();
 		ad.setId(1); //AGGIUNGI SE DEVI USARE L'ID
 		ad.setTitle("titolo2");
 		ad.setDegreeCourse("degree2");
@@ -64,7 +64,7 @@ public class DBManager {
 		method.setCvc(332);
 		method.setDefault(false);
 		
-		DBManager.getInstance().getPaymentMethodDao().update(method);
+		DBManager.getInstance().getPaymentMethodDao().save(method);*/
 		
 		
 		//DBManager.getInstance().resetSerialPreview();
@@ -140,7 +140,7 @@ public class DBManager {
 			//questi vanno messi in file di configurazione!!!	
 //			dataSource=new DataSource("jdbc:postgresql://52.39.164.176:5432/xx","xx","p@xx");
 			//dataSource=new DataSource("jdbc:postgresql://manny.db.elephantsql.com:5432/nzxxsfok","nzxxsfok","5JTu5JBBv9l17WPT1rFhHHpp2OAZ4iuY");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","Qwerty123");
+			dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","postgres");
 
 		} 
 		catch (Exception e) {
@@ -181,7 +181,7 @@ public class DBManager {
 		this.getPreviewDao().save(preview);
 	}
 	
-	public ReviewDaoJDBC getReviewDao()
+	public ReviewDao getReviewDao()
 	{
 		return new ReviewDaoJDBC(dataSource);
 	}
@@ -227,14 +227,14 @@ public class DBManager {
 		}
 	}
 	
-	//PARTE DA 2 COSÌ LASCIO SEMPRE UN CARRELLO CUI REFERENZIA L'USER
+	
 	public void resetSerialPreview() {
 		Connection connection = null;
 		
 		try {
 			connection = this.dataSource.getConnection();
 			PreparedStatement statement;
-			String query = "select setval('\"anteprima_anteprimaId_seq\"',2,false)";
+			String query = "select setval('\"anteprima_anteprimaId_seq\"',1,false)";
 			statement = connection.prepareStatement(query);
 
 			statement.executeQuery();
@@ -272,13 +272,14 @@ public class DBManager {
 		}	
 	}
 	
+	//PARTE DA 2 COSÌ LASCIO SEMPRE UN CARRELLO CUI REFERENZIA L'USER
 	public void resetSerialCart() {
 		Connection connection = null;
 		
 		try {
 			connection = this.dataSource.getConnection();
 			PreparedStatement statement;
-			String query = "select setval('\"carrello_carrelloId_seq\"',1,false)";
+			String query = "select setval('\"carrello_carrelloId_seq\"',2,false)";
 			statement = connection.prepareStatement(query);
 
 			statement.executeQuery();
