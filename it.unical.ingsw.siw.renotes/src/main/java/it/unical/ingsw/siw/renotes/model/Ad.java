@@ -1,6 +1,7 @@
 package it.unical.ingsw.siw.renotes.model;
 
 import java.io.File;
+import java.util.List;
 
 public class Ad {
 
@@ -70,4 +71,20 @@ public class Ad {
 		this.file = file;
 	}
 	
+	public int[] getStat(List<Review> reviews)
+	{
+		int statistics[] = {0,0,0};
+		
+		for(Review r: reviews)
+		{
+			statistics[0] += r.getQuality(); 
+			statistics[1] += r.getReliability(); 
+			statistics[2] += r.getCompleteness(); 
+		}
+		
+		for(int i=0; i<3; i++)
+			statistics[i] /= reviews.size();
+		
+		return statistics;
+	}
 }

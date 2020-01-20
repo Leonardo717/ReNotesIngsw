@@ -272,7 +272,6 @@ public class AdDaoJDBC implements AdDao {
 					throw new RuntimeException(e.getMessage());
 				}
 			}	
-			
 		}
 		finally
 		{
@@ -285,5 +284,52 @@ public class AdDaoJDBC implements AdDao {
 		}
 		
 		return reviews;
+	}
+
+
+	public User findUserCreator(Integer adId) {
+		User user = null;
+		Connection connection = null;
+		
+		try 
+		{
+			connection = dataSource.getConnection();
+			
+			String query = "select utente_username, utente_mail from relazione_utente_inserzione where inserzione=? and e_acquistata=false";
+			PreparedStatement stm = connection.prepareStatement(query);
+			
+			stm.setInt(1, adId);
+			
+			ResultSet result = stm.executeQuery();
+			
+			if(result.next())
+			{
+				user = new User();
+				user.setUsername(result.getString("utente_username"));
+				user.setMail(result.getString("utente_mail"));
+			}
+		} 
+		catch (SQLException e) {
+			if(connection != null)
+			{
+				try {
+					connection.rollback();
+				} catch (SQLException e1) {
+					
+					throw new RuntimeException(e.getMessage());
+				}
+			}	
+		}
+		finally
+		{
+			try {
+				connection.close();
+			} 
+			catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		
+		return user;
 	}
 }

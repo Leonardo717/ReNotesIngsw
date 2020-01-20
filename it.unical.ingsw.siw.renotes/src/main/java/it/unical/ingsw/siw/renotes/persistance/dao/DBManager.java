@@ -29,7 +29,7 @@ public class DBManager {
 	public static void main(String[] args) {
 		
 		//DBManager.getInstance().findCarrelloProva();
-		Ad ad = new Ad();
+		/*Ad ad = new Ad();
 		ad.setId(1); //AGGIUNGI SE DEVI USARE L'ID
 		ad.setTitle("titolo2");
 		ad.setDegreeCourse("degree2");
@@ -79,7 +79,7 @@ public class DBManager {
 		u.setPassword("leo");
 		Cart cart=new Cart();
 		cart.setId(2);
-		u.setCart(cart);
+		u.setCart(cart);*/
 		
 		/*List<PaymentMethod> p= DBManager.getInstance().getUserDao().findPaymentMethods(u);
 		for(PaymentMethod r : p)
@@ -156,6 +156,8 @@ public class DBManager {
 		//DBManager.getInstance().getCartDao().insertAd(1, 1);
 		//DBManager.getInstance().getCartDao().deleteAd(1, 1);
 		
+		Ad ad = DBManager.getInstance().getAdDao().findByPrimaryKey(1);
+		System.out.println("MAIN" + ad.getTitle()); 
 	}
 	
 	private static  DataSource dataSource;
@@ -166,7 +168,7 @@ public class DBManager {
 			//questi vanno messi in file di configurazione!!!	
 //			dataSource=new DataSource("jdbc:postgresql://52.39.164.176:5432/xx","xx","p@xx");
 			//dataSource=new DataSource("jdbc:postgresql://manny.db.elephantsql.com:5432/nzxxsfok","nzxxsfok","5JTu5JBBv9l17WPT1rFhHHpp2OAZ4iuY");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","Qwerty123");
+			dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","postgres");
 
 		} 
 		catch (Exception e) {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import it.unical.ingsw.siw.renotes.model.Ad;
 import it.unical.ingsw.siw.renotes.model.Review;
+import it.unical.ingsw.siw.renotes.model.User;
 
 
 public interface AdDao {
@@ -14,5 +15,6 @@ public interface AdDao {
 	public void delete(Ad ad);
 	
 	public List<Review> findReview(Integer adId);
+	public User findUserCreator(Integer adId);
 
 }
