@@ -25,6 +25,11 @@ public class Cart {
 		this.id = id;
 	}
 	public double getTotal() {
+		this.total = 0;
+		
+		for(Ad ad: ads)
+			this.total += ad.getPrice();
+		
 		return total;
 	}
 	public void setTotal(double total) {

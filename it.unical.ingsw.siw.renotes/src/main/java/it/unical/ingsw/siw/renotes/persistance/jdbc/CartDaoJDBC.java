@@ -10,6 +10,7 @@ import java.util.List;
 
 import it.unical.ingsw.siw.renotes.model.Ad;
 import it.unical.ingsw.siw.renotes.model.Cart;
+import it.unical.ingsw.siw.renotes.persistance.dao.AdDao;
 import it.unical.ingsw.siw.renotes.persistance.dao.CartDao;
 import it.unical.ingsw.siw.renotes.persistance.dao.DataSource;
 
@@ -233,8 +234,8 @@ public class CartDaoJDBC implements CartDao {
 			String delete = "delete from inserzioni_nel_carrello where inserzione=? and carrello = ?";
 			PreparedStatement stm = connection.prepareStatement(delete);
 			
-			stm.setInt(1, cartId);
-			stm.setInt(2, adId);
+			stm.setInt(1, adId);
+			stm.setInt(2, cartId);
 			
 			stm.executeUpdate();
 			
@@ -265,7 +266,7 @@ public class CartDaoJDBC implements CartDao {
 	//LE ad ALL'INTERNO DELLA LISTA HANNO SOLO L'id ASSEGNATO
 	public List<Ad> listOfAds(Cart cart) {
 		
-		List<Ad> ads = new ArrayList<Ad>();
+		List<Ad> adsTemp = new ArrayList<Ad>();
 		Connection connection = null;
 		
 		try 
@@ -284,8 +285,9 @@ public class CartDaoJDBC implements CartDao {
 				
 				ad.setId(result.getInt("inserzione"));
 				
-				ads.add(ad);
+				adsTemp.add(ad);
 			}
+			
 		} 
 		catch (SQLException e) {
 			if(connection != null)
@@ -307,6 +309,17 @@ public class CartDaoJDBC implements CartDao {
 				throw new RuntimeException(e.getMessage());
 			}
 		}
+		//MI SERVE PER IL CARRELLO
+		List<Ad> ads = new ArrayList<Ad>();
+		for(Ad ad: adsTemp)
+		{
+			AdDaoJDBC adDaoJDBC = new AdDaoJDBC(dataSource);
+			Ad a = new Ad();
+			a = adDaoJDBC.findByPrimaryKey(ad.getId());
+			
+			ads.add(a);
+		}
+		
 		return ads;
 	}
 

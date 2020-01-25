@@ -16,5 +16,7 @@ public interface AdDao {
 	
 	public List<Review> findReview(Integer adId);
 	public User findUserCreator(Integer adId);
+	
+	public List<Ad> findAll();
 
 }

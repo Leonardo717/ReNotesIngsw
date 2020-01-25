@@ -75,16 +75,27 @@ public class Ad {
 	{
 		int statistics[] = {0,0,0};
 		
-		for(Review r: reviews)
+		if(reviews.size()>0)
 		{
-			statistics[0] += r.getQuality(); 
-			statistics[1] += r.getReliability(); 
-			statistics[2] += r.getCompleteness(); 
+			for(Review r: reviews)
+			{
+				statistics[0] += r.getQuality(); 
+				statistics[1] += r.getReliability(); 
+				statistics[2] += r.getCompleteness(); 
+			}
+			
+			for(int i=0; i<3; i++)
+				if(statistics[i] != 0)
+					statistics[i] /= reviews.size();
 		}
 		
-		for(int i=0; i<3; i++)
-			statistics[i] /= reviews.size();
-		
 		return statistics;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+
+		Ad ad = (Ad) obj;
+		return id==ad.id;
 	}
 }

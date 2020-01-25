@@ -10,13 +10,78 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
 
 	<servlet>
-  		<servlet-name>AdInfo</servlet-name>
-  		<servlet-class>it.unical.ingsw.siw.renotes.controller.GetAdInfo</servlet-class>
+  		<servlet-name>FLogin</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.FLogin</servlet-class>
  	 </servlet>
  	
  	 <servlet-mapping>
- 	 	<servlet-name>AdInfo</servlet-name>
-  		<url-pattern>/adInfo</url-pattern>
+ 	 	<servlet-name>FLogin</servlet-name>
+  		<url-pattern></url-pattern>
+	 </servlet-mapping>
+	 
+	<servlet>
+  		<servlet-name>GetAdInfo</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.GetAdInfo</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>GetAdInfo</servlet-name>
+  		<url-pattern>/GetAdInfo</url-pattern>
+	 </servlet-mapping>	 
+	 
+	 <servlet>
+  		<servlet-name>ReviewAd</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ReviewAd</servlet-class>
+ 	 </servlet>
+ 	
+ 	 <servlet-mapping>
+ 	 	<servlet-name>ReviewAd</servlet-name>
+  		<url-pattern>/reviewAdd</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ViewCart</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewCart</servlet-class>
+ 	 </servlet>
+ 	
+ 	 <servlet-mapping>
+ 	 	<servlet-name>ViewCart</servlet-name>
+  		<url-pattern>/cart</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet-mapping>
+ 	 	<servlet-name>ViewCart</servlet-name>
+  		<url-pattern>/ViewCart</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ViewAdList</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewAdList</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewAdList</servlet-name>
+  		<url-pattern>/ViewAdList</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ManageCart</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ManageCart</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ManageCart</servlet-name>
+  		<url-pattern>/ManageCart</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>Checkout</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.Checkout</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>Checkout</servlet-name>
+  		<url-pattern>/checkout</url-pattern>
 	 </servlet-mapping>
 	 
 </web-app>

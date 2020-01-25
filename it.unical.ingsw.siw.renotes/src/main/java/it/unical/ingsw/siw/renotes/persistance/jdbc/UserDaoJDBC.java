@@ -330,7 +330,6 @@ public class UserDaoJDBC implements UserDao{
 					throw new RuntimeException(e.getMessage());
 				}
 			}
-
 		}
 		finally
 		{

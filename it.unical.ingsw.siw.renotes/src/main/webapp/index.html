@@ -2,771 +2,696 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin - Dashboard</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
-
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title> RENOTES </title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body>
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <!-- NavBar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
 
-    <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+      <!-- Brand -->
+      <a class="navbar-brand" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+        <strong>MDB</strong>
+      </a>
 
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-    <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="adInfo"> AD INFO 1</a>
-          <a class="dropdown-item" href="#"> Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger">7</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-      </li>
-    </ul>
-
-  </nav>
-
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
-    </ul>
-
-    <div id="content-wrapper">
-
-      <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+              <a class="nav-link" href="ViewAdList"> AD LIST
+              <span class="sr-only">(current)</span>
+            </a>
+           
+            <!--<form method="get" action="GetAdInfo">
+            	AD INFO N: <input type="text" name="adIdIndex">
+             </form> -->
           </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
+          <li class="nav-item">
+            <a class="nav-link" href="reviewAdd">REVIEW AD 1</a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="cart">CARRELLO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free tutorials</a>
+          </li>
+        </ul>
 
-        <!-- Icon Cards-->
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded"
+              target="_blank">
+              <i class="fab fa-github mr-2"></i>MDB GitHub
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <!-- Navbar -->
+
+  <!-- Full Page Intro -->
+  <div class="view full-page-intro" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/78.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+      <!-- Content -->
+      <div class="container">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+
+            <h1 class="display-4 font-weight-bold">Learn Bootstrap 4 with MDB</h1>
+
+            <hr class="hr-light">
+
+            <p>
+              <strong>Best & free guide of responsive web design</strong>
+            </p>
+
+            <p class="mb-4 d-none d-md-block">
+              <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written versions
+                available. Create your own, stunning website.</strong>
+            </p>
+
+            <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-indigo btn-lg">Start free tutorial
+              <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 col-xl-5 mb-4">
+
+            <!--Card-->
+            <div class="card">
+
+              <!--Card content-->
+              <div class="card-body">
+
+                <!-- Form -->
+                
+                  <!-- Heading -->
+                  <h3 class="dark-grey-text text-center">
+                    <strong>Write to us:</strong>
+                  </h3>
+                  <hr>
+
+                  <div class="md-form">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input type="text" id="form3" class="form-control">
+                    <label for="form3">Your name</label>
+                  </div>
+                  <div class="md-form">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="text" id="form2" class="form-control">
+                    <label for="form2">Your email</label>
+                  </div>
+
+                  <div class="md-form">
+                    <i class="fas fa-pencil-alt prefix grey-text"></i>
+                    <textarea type="text" id="form8" class="md-textarea"></textarea>
+                    <label for="form8">Your message</label>
+                  </div>
+
+                  <div class="text-center">
+                    <button class="btn btn-indigo">Send</button>
+                    <hr>
+                    <fieldset class="form-check">
+                      <input type="checkbox" class="form-check-input" id="checkbox1">
+                      <label for="checkbox1" class="form-check-label dark-grey-text">Subscribe me to the newsletter</label>
+                    </fieldset>
+                  </div>
+
+                
+                <!-- Form -->
+
+              </div>
+
+            </div>
+            <!--/.Card-->
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </div>
+      <!-- Content -->
+
+    </div>
+    <!-- Mask & flexbox options-->
+
+  </div>
+  <!-- Full Page Intro -->
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <!--Section: Main info-->
+      <section class="mt-5 wow fadeIn">
+
+        <!--Grid row-->
         <div class="row">
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-primary o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-comments"></i>
-                </div>
-                <div class="mr-5">26 New Messages!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-warning o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-list"></i>
-                </div>
-                <div class="mr-5">11 New Tasks!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-success o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">123 New Orders!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- Area Chart Example-->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-chart-area"></i>
-            Area Chart Example</div>
-          <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
 
-        <!-- DataTables Example -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Data Table Example</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr>
-                    <td>Tiger Nixon</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
-                  </tr>
-                  <tr>
-                    <td>Garrett Winters</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>63</td>
-                    <td>2011/07/25</td>
-                    <td>$170,750</td>
-                  </tr>
-                  <tr>
-                    <td>Ashton Cox</td>
-                    <td>Junior Technical Author</td>
-                    <td>San Francisco</td>
-                    <td>66</td>
-                    <td>2009/01/12</td>
-                    <td>$86,000</td>
-                  </tr>
-                  <tr>
-                    <td>Cedric Kelly</td>
-                    <td>Senior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2012/03/29</td>
-                    <td>$433,060</td>
-                  </tr>
-                  <tr>
-                    <td>Airi Satou</td>
-                    <td>Accountant</td>
-                    <td>Tokyo</td>
-                    <td>33</td>
-                    <td>2008/11/28</td>
-                    <td>$162,700</td>
-                  </tr>
-                  <tr>
-                    <td>Brielle Williamson</td>
-                    <td>Integration Specialist</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2012/12/02</td>
-                    <td>$372,000</td>
-                  </tr>
-                  <tr>
-                    <td>Herrod Chandler</td>
-                    <td>Sales Assistant</td>
-                    <td>San Francisco</td>
-                    <td>59</td>
-                    <td>2012/08/06</td>
-                    <td>$137,500</td>
-                  </tr>
-                  <tr>
-                    <td>Rhona Davidson</td>
-                    <td>Integration Specialist</td>
-                    <td>Tokyo</td>
-                    <td>55</td>
-                    <td>2010/10/14</td>
-                    <td>$327,900</td>
-                  </tr>
-                  <tr>
-                    <td>Colleen Hurst</td>
-                    <td>Javascript Developer</td>
-                    <td>San Francisco</td>
-                    <td>39</td>
-                    <td>2009/09/15</td>
-                    <td>$205,500</td>
-                  </tr>
-                  <tr>
-                    <td>Sonya Frost</td>
-                    <td>Software Engineer</td>
-                    <td>Edinburgh</td>
-                    <td>23</td>
-                    <td>2008/12/13</td>
-                    <td>$103,600</td>
-                  </tr>
-                  <tr>
-                    <td>Jena Gaines</td>
-                    <td>Office Manager</td>
-                    <td>London</td>
-                    <td>30</td>
-                    <td>2008/12/19</td>
-                    <td>$90,560</td>
-                  </tr>
-                  <tr>
-                    <td>Quinn Flynn</td>
-                    <td>Support Lead</td>
-                    <td>Edinburgh</td>
-                    <td>22</td>
-                    <td>2013/03/03</td>
-                    <td>$342,000</td>
-                  </tr>
-                  <tr>
-                    <td>Charde Marshall</td>
-                    <td>Regional Director</td>
-                    <td>San Francisco</td>
-                    <td>36</td>
-                    <td>2008/10/16</td>
-                    <td>$470,600</td>
-                  </tr>
-                  <tr>
-                    <td>Haley Kennedy</td>
-                    <td>Senior Marketing Designer</td>
-                    <td>London</td>
-                    <td>43</td>
-                    <td>2012/12/18</td>
-                    <td>$313,500</td>
-                  </tr>
-                  <tr>
-                    <td>Tatyana Fitzpatrick</td>
-                    <td>Regional Director</td>
-                    <td>London</td>
-                    <td>19</td>
-                    <td>2010/03/17</td>
-                    <td>$385,750</td>
-                  </tr>
-                  <tr>
-                    <td>Michael Silva</td>
-                    <td>Marketing Designer</td>
-                    <td>London</td>
-                    <td>66</td>
-                    <td>2012/11/27</td>
-                    <td>$198,500</td>
-                  </tr>
-                  <tr>
-                    <td>Paul Byrd</td>
-                    <td>Chief Financial Officer (CFO)</td>
-                    <td>New York</td>
-                    <td>64</td>
-                    <td>2010/06/09</td>
-                    <td>$725,000</td>
-                  </tr>
-                  <tr>
-                    <td>Gloria Little</td>
-                    <td>Systems Administrator</td>
-                    <td>New York</td>
-                    <td>59</td>
-                    <td>2009/04/10</td>
-                    <td>$237,500</td>
-                  </tr>
-                  <tr>
-                    <td>Bradley Greer</td>
-                    <td>Software Engineer</td>
-                    <td>London</td>
-                    <td>41</td>
-                    <td>2012/10/13</td>
-                    <td>$132,000</td>
-                  </tr>
-                  <tr>
-                    <td>Dai Rios</td>
-                    <td>Personnel Lead</td>
-                    <td>Edinburgh</td>
-                    <td>35</td>
-                    <td>2012/09/26</td>
-                    <td>$217,500</td>
-                  </tr>
-                  <tr>
-                    <td>Jenette Caldwell</td>
-                    <td>Development Lead</td>
-                    <td>New York</td>
-                    <td>30</td>
-                    <td>2011/09/03</td>
-                    <td>$345,000</td>
-                  </tr>
-                  <tr>
-                    <td>Yuri Berry</td>
-                    <td>Chief Marketing Officer (CMO)</td>
-                    <td>New York</td>
-                    <td>40</td>
-                    <td>2009/06/25</td>
-                    <td>$675,000</td>
-                  </tr>
-                  <tr>
-                    <td>Caesar Vance</td>
-                    <td>Pre-Sales Support</td>
-                    <td>New York</td>
-                    <td>21</td>
-                    <td>2011/12/12</td>
-                    <td>$106,450</td>
-                  </tr>
-                  <tr>
-                    <td>Doris Wilder</td>
-                    <td>Sales Assistant</td>
-                    <td>Sidney</td>
-                    <td>23</td>
-                    <td>2010/09/20</td>
-                    <td>$85,600</td>
-                  </tr>
-                  <tr>
-                    <td>Angelica Ramos</td>
-                    <td>Chief Executive Officer (CEO)</td>
-                    <td>London</td>
-                    <td>47</td>
-                    <td>2009/10/09</td>
-                    <td>$1,200,000</td>
-                  </tr>
-                  <tr>
-                    <td>Gavin Joyce</td>
-                    <td>Developer</td>
-                    <td>Edinburgh</td>
-                    <td>42</td>
-                    <td>2010/12/22</td>
-                    <td>$92,575</td>
-                  </tr>
-                  <tr>
-                    <td>Jennifer Chang</td>
-                    <td>Regional Director</td>
-                    <td>Singapore</td>
-                    <td>28</td>
-                    <td>2010/11/14</td>
-                    <td>$357,650</td>
-                  </tr>
-                  <tr>
-                    <td>Brenden Wagner</td>
-                    <td>Software Engineer</td>
-                    <td>San Francisco</td>
-                    <td>28</td>
-                    <td>2011/06/07</td>
-                    <td>$206,850</td>
-                  </tr>
-                  <tr>
-                    <td>Fiona Green</td>
-                    <td>Chief Operating Officer (COO)</td>
-                    <td>San Francisco</td>
-                    <td>48</td>
-                    <td>2010/03/11</td>
-                    <td>$850,000</td>
-                  </tr>
-                  <tr>
-                    <td>Shou Itou</td>
-                    <td>Regional Marketing</td>
-                    <td>Tokyo</td>
-                    <td>20</td>
-                    <td>2011/08/14</td>
-                    <td>$163,000</td>
-                  </tr>
-                  <tr>
-                    <td>Michelle House</td>
-                    <td>Integration Specialist</td>
-                    <td>Sidney</td>
-                    <td>37</td>
-                    <td>2011/06/02</td>
-                    <td>$95,400</td>
-                  </tr>
-                  <tr>
-                    <td>Suki Burks</td>
-                    <td>Developer</td>
-                    <td>London</td>
-                    <td>53</td>
-                    <td>2009/10/22</td>
-                    <td>$114,500</td>
-                  </tr>
-                  <tr>
-                    <td>Prescott Bartlett</td>
-                    <td>Technical Author</td>
-                    <td>London</td>
-                    <td>27</td>
-                    <td>2011/05/07</td>
-                    <td>$145,000</td>
-                  </tr>
-                  <tr>
-                    <td>Gavin Cortez</td>
-                    <td>Team Leader</td>
-                    <td>San Francisco</td>
-                    <td>22</td>
-                    <td>2008/10/26</td>
-                    <td>$235,500</td>
-                  </tr>
-                  <tr>
-                    <td>Martena Mccray</td>
-                    <td>Post-Sales support</td>
-                    <td>Edinburgh</td>
-                    <td>46</td>
-                    <td>2011/03/09</td>
-                    <td>$324,050</td>
-                  </tr>
-                  <tr>
-                    <td>Unity Butler</td>
-                    <td>Marketing Designer</td>
-                    <td>San Francisco</td>
-                    <td>47</td>
-                    <td>2009/12/09</td>
-                    <td>$85,675</td>
-                  </tr>
-                  <tr>
-                    <td>Howard Hatfield</td>
-                    <td>Office Manager</td>
-                    <td>San Francisco</td>
-                    <td>51</td>
-                    <td>2008/12/16</td>
-                    <td>$164,500</td>
-                  </tr>
-                  <tr>
-                    <td>Hope Fuentes</td>
-                    <td>Secretary</td>
-                    <td>San Francisco</td>
-                    <td>41</td>
-                    <td>2010/02/12</td>
-                    <td>$109,850</td>
-                  </tr>
-                  <tr>
-                    <td>Vivian Harrell</td>
-                    <td>Financial Controller</td>
-                    <td>San Francisco</td>
-                    <td>62</td>
-                    <td>2009/02/14</td>
-                    <td>$452,500</td>
-                  </tr>
-                  <tr>
-                    <td>Timothy Mooney</td>
-                    <td>Office Manager</td>
-                    <td>London</td>
-                    <td>37</td>
-                    <td>2008/12/11</td>
-                    <td>$136,200</td>
-                  </tr>
-                  <tr>
-                    <td>Jackson Bradshaw</td>
-                    <td>Director</td>
-                    <td>New York</td>
-                    <td>65</td>
-                    <td>2008/09/26</td>
-                    <td>$645,750</td>
-                  </tr>
-                  <tr>
-                    <td>Olivia Liang</td>
-                    <td>Support Engineer</td>
-                    <td>Singapore</td>
-                    <td>64</td>
-                    <td>2011/02/03</td>
-                    <td>$234,500</td>
-                  </tr>
-                  <tr>
-                    <td>Bruno Nash</td>
-                    <td>Software Engineer</td>
-                    <td>London</td>
-                    <td>38</td>
-                    <td>2011/05/03</td>
-                    <td>$163,500</td>
-                  </tr>
-                  <tr>
-                    <td>Sakura Yamamoto</td>
-                    <td>Support Engineer</td>
-                    <td>Tokyo</td>
-                    <td>37</td>
-                    <td>2009/08/19</td>
-                    <td>$139,575</td>
-                  </tr>
-                  <tr>
-                    <td>Thor Walton</td>
-                    <td>Developer</td>
-                    <td>New York</td>
-                    <td>61</td>
-                    <td>2013/08/11</td>
-                    <td>$98,540</td>
-                  </tr>
-                  <tr>
-                    <td>Finn Camacho</td>
-                    <td>Support Engineer</td>
-                    <td>San Francisco</td>
-                    <td>47</td>
-                    <td>2009/07/07</td>
-                    <td>$87,500</td>
-                  </tr>
-                  <tr>
-                    <td>Serge Baldwin</td>
-                    <td>Data Coordinator</td>
-                    <td>Singapore</td>
-                    <td>64</td>
-                    <td>2012/04/09</td>
-                    <td>$138,575</td>
-                  </tr>
-                  <tr>
-                    <td>Zenaida Frank</td>
-                    <td>Software Engineer</td>
-                    <td>New York</td>
-                    <td>63</td>
-                    <td>2010/01/04</td>
-                    <td>$125,250</td>
-                  </tr>
-                  <tr>
-                    <td>Zorita Serrano</td>
-                    <td>Software Engineer</td>
-                    <td>San Francisco</td>
-                    <td>56</td>
-                    <td>2012/06/01</td>
-                    <td>$115,000</td>
-                  </tr>
-                  <tr>
-                    <td>Jennifer Acosta</td>
-                    <td>Junior Javascript Developer</td>
-                    <td>Edinburgh</td>
-                    <td>43</td>
-                    <td>2013/02/01</td>
-                    <td>$75,650</td>
-                  </tr>
-                  <tr>
-                    <td>Cara Stevens</td>
-                    <td>Sales Assistant</td>
-                    <td>New York</td>
-                    <td>46</td>
-                    <td>2011/12/06</td>
-                    <td>$145,600</td>
-                  </tr>
-                  <tr>
-                    <td>Hermione Butler</td>
-                    <td>Regional Director</td>
-                    <td>London</td>
-                    <td>47</td>
-                    <td>2011/03/21</td>
-                    <td>$356,250</td>
-                  </tr>
-                  <tr>
-                    <td>Lael Greer</td>
-                    <td>Systems Administrator</td>
-                    <td>London</td>
-                    <td>21</td>
-                    <td>2009/02/27</td>
-                    <td>$103,500</td>
-                  </tr>
-                  <tr>
-                    <td>Jonas Alexander</td>
-                    <td>Developer</td>
-                    <td>San Francisco</td>
-                    <td>30</td>
-                    <td>2010/07/14</td>
-                    <td>$86,500</td>
-                  </tr>
-                  <tr>
-                    <td>Shad Decker</td>
-                    <td>Regional Director</td>
-                    <td>Edinburgh</td>
-                    <td>51</td>
-                    <td>2008/11/13</td>
-                    <td>$183,000</td>
-                  </tr>
-                  <tr>
-                    <td>Michael Bruce</td>
-                    <td>Javascript Developer</td>
-                    <td>Singapore</td>
-                    <td>29</td>
-                    <td>2011/06/27</td>
-                    <td>$183,000</td>
-                  </tr>
-                  <tr>
-                    <td>Donna Snider</td>
-                    <td>Customer Support</td>
-                    <td>New York</td>
-                    <td>27</td>
-                    <td>2011/01/25</td>
-                    <td>$112,000</td>
-                  </tr>
-                </tbody>
-              </table>
+            <img src="https://mdbootstrap.com/img/Marketing/mdb-press-pack/mdb-main.jpg" class="img-fluid z-depth-1-half" alt="">
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-6 mb-4">
+
+            <!-- Main heading -->
+            <h3 class="h3 mb-3">Material Design for Bootstrap</h3>
+            <p>This template is created with Material Design for Bootstrap (
+              <strong>MDB</strong> ) framework.</p>
+            <p>Read details below to learn more about MDB.</p>
+            <!-- Main heading -->
+
+            <hr>
+
+            <p>
+              <strong>400+</strong> material UI elements,
+              <strong>600+</strong> material icons,
+              <strong>74</strong> CSS animations, SASS files, templates, tutorials and many more.
+              <strong>Free for personal and commercial use.</strong>
+            </p>
+
+            <!-- CTA -->
+            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" class="btn btn-indigo btn-md">Download
+              <i class="fas fa-download ml-1"></i>
+            </a>
+            <a target="_blank" href="https://mdbootstrap.com/docs/jquery/components/" class="btn btn-indigo btn-md">Live demo
+              <i class="far fa-image ml-1"></i>
+            </a>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Main info-->
+
+      <hr class="my-5">
+
+      <!--Section: Main features & Quick Start-->
+      <section>
+
+        <h3 class="h3 text-center mb-5">About MDB</h3>
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12 px-4">
+
+            <!--First row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-code fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Bootstrap 4</h5>
+                <p class="grey-text">Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.</p>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <div style="height:30px"></div>
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-book fa-2x blue-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Detailed documentation</h5>
+                <p class="grey-text">We give you detailed user-friendly documentation at your disposal. It will help you to implement your ideas
+                  easily.
+                </p>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <div style="height:30px"></div>
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-1 mr-3">
+                <i class="fas fa-graduation-cap fa-2x cyan-text"></i>
+              </div>
+              <div class="col-10">
+                <h5 class="feature-title">Lots of tutorials</h5>
+                <p class="grey-text">We care about the development of our users. We have prepared numerous tutorials, which allow you to learn
+                  how to use MDB as well as other technologies.</p>
+              </div>
+            </div>
+            <!--/Third row-->
+
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-6 col-md-12">
+
+            <p class="h5 text-center mb-4">Watch our "5 min Quick Start" tutorial</p>
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/cXTThxoywNQ" allowfullscreen></iframe>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <!--/Grid column-->
+
         </div>
+        <!--/Grid row-->
 
-      </div>
-      <!-- /.container-fluid -->
+      </section>
+      <!--Section: Main features & Quick Start-->
 
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
+      <hr class="my-5">
+
+      <!--Section: Not enough-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">Not enough?</h2>
+
+        <!--First row-->
+        <div class="row features-small mb-5 mt-3 wow fadeIn">
+
+          <!--First column-->
+          <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Free for personal and commercial use</h6>
+                <p class="grey-text">Our license is user-friendly. Feel free to use MDB for both private as well as commercial projects.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">400+ UI elements</h6>
+                <p class="grey-text">An impressive collection of flexible components allows you to develop any project.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">600+ icons</h6>
+                <p class="grey-text">Hundreds of useful, scalable, vector icons at your disposal.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Fully responsive</h6>
+                <p class="grey-text">It doesn't matter whether your project will be displayed on desktop, laptop, tablet or mobile phone. MDB
+                  looks great on each screen.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
           </div>
+          <!--/First column-->
+
+          <!--Second column-->
+          <div class="col-md-4 flex-center">
+            <img src="https://mdbootstrap.com/img/Others/screens.png" alt="MDB Magazine Template displayed on iPhone" class="z-depth-0 img-fluid">
+          </div>
+          <!--/Second column-->
+
+          <!--Third column-->
+          <div class="col-md-4 mt-2">
+            <!--First row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">70+ CSS animations</h6>
+                <p class="grey-text">Neat and easy to use animations, which will increase the interactivity of your project and delight your visitors.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Plenty of useful templates</h6>
+                <p class="grey-text">Need inspiration? Use one of our predefined templates for free.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Easy installation</h6>
+                <p class="grey-text">5 minutes, a few clicks and... done. You will be surprised at how easy it is.
+                </p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Third row-->
+
+            <!--Fourth row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-check-circle fa-2x indigo-text"></i>
+              </div>
+              <div class="col-10">
+                <h6 class="feature-title">Easy to use and customize</h6>
+                <p class="grey-text">Using MDB is straightforward and pleasant. Components flexibility allows you deep customization. You will
+                  easily adjust each component to suit your needs.</p>
+                <div style="height:15px"></div>
+              </div>
+            </div>
+            <!--/Fourth row-->
+          </div>
+          <!--/Third column-->
+
         </div>
-      </footer>
+        <!--/First row-->
+
+      </section>
+      <!--Section: Not enough-->
+
+      <hr class="mb-5">
+
+      <!--Section: More-->
+      <section>
+
+        <h2 class="my-5 h3 text-center">...and even more</h2>
+
+        <!--First row-->
+        <div class="row features-small mt-5 wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fab fa-firefox fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2 pl-3">
+                <h5 class="feature-title font-bold mb-1">Cross-browser compatibility</h5>
+                <p class="grey-text mt-2">Chrome, Firefox, IE, Safari, Opera, Microsoft Edge - MDB loves all browsers; all browsers love MDB.
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-level-up-alt fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Frequent updates</h5>
+                <p class="grey-text mt-2">MDB becomes better every month. We love the project and enhance as much as possible.
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-comments fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Active community</h5>
+                <p class="grey-text mt-2">Our society grows day by day. Visit our forum and check how it is to be a part of our family.
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">jQuery 3.x</h5>
+                <p class="grey-text mt-2">MDB is integrated with newest jQuery. Therefore you can use all the latest features which come along with
+                  it.
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/First row-->
+
+        <!--Second row-->
+        <div class="row features-small mt-4 wow fadeIn">
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-cubes fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Modularity</h5>
+                <p class="grey-text mt-2">Material Design for Bootstrap comes with both, compiled, ready to use libraries including all features as
+                  well as modules for CSS (SASS files) and JS.</p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-question fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Technical support</h5>
+                <p class="grey-text mt-2">We care about reliability. If you have any questions - do not hesitate to contact us.
+                </p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="fas fa-th fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">Flexbox</h5>
+                <p class="grey-text mt-2">MDB fully supports Flex Box. You can forget about alignment issues.</p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+          <!--Grid column-->
+          <div class="col-xl-3 col-lg-6">
+            <!--Grid row-->
+            <div class="row">
+              <div class="col-2">
+                <i class="far fa-file-code fa-2x mb-1 indigo-text" aria-hidden="true"></i>
+              </div>
+              <div class="col-10 mb-2">
+                <h5 class="feature-title font-bold mb-1">SASS files</h5>
+                <p class="grey-text mt-2">Arranged and well documented .scss files can't wait until you compile them.</p>
+              </div>
+            </div>
+            <!--/Grid row-->
+          </div>
+          <!--/Grid column-->
+
+        </div>
+        <!--/Second row-->
+
+      </section>
+      <!--Section: More-->
 
     </div>
-    <!-- /.content-wrapper -->
+  </main>
+  <!--Main layout-->
 
-  </div>
-  <!-- /#wrapper -->
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
+    <!--Call to action-->
+    <div class="pt-4">
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank" role="button">Download MDB
+        <i class="fas fa-download ml-2"></i>
+      </a>
+      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start free tutorial
+        <i class="fas fa-graduation-cap ml-2"></i>
+      </a>
     </div>
-  </div>
+    <!--/.Call to action-->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <hr class="my-4">
 
-  <!-- Core plugin JavaScript-->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Social icons -->
+    <div class="pb-4">
+      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+      <a href="https://twitter.com/MDBootstrap" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
 
-  <!-- Custom scripts for all pages-->
-  <script src="js/sb-admin.min.js"></script>
+      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
 
-  <!-- Demo scripts for this page-->
-  <script src="js/demo/datatables-demo.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
+      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+        <i class="fab fa-google-plus-g mr-3"></i>
+      </a>
 
+      <a href="https://dribbble.com/mdbootstrap" target="_blank">
+        <i class="fab fa-dribbble mr-3"></i>
+      </a>
+
+      <a href="https://pinterest.com/mdbootstrap" target="_blank">
+        <i class="fab fa-pinterest mr-3"></i>
+      </a>
+
+      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+        <i class="fab fa-github mr-3"></i>
+      </a>
+
+      <a href="http://codepen.io/mdbootstrap/" target="_blank">
+        <i class="fab fa-codepen mr-3"></i>
+      </a>
+    </div>
+    <!-- Social icons -->
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3">
+      © 2019 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
 </body>
 
 </html>

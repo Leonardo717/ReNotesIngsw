@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.unical.ingsw.siw.renotes.model.Ad;
 import it.unical.ingsw.siw.renotes.model.Review;
@@ -18,29 +19,46 @@ public class GetAdInfo extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//String idS = req.getParameter("adId");
-		//System.out.println(idS);
-		//Integer id = Integer.valueOf(idS);
 		
-		int id = 1;
+		Integer id = 0;
+		String idString = req.getParameter("adIdByCart");
+		
+		if( idString != null )
+		{
+			id = Integer.valueOf(req.getParameter("adIdByCart"));
+			req.getSession().removeAttribute("adIdByCart");
+		}
+		else
+		{
+			idString = req.getParameter("adIdByList");
+			id = Integer.valueOf(req.getParameter("adIdByList"));
+			//req.getSession().removeAttribute("adIdIByList");
+		}
+	
 		Ad ad = DBManager.getInstance().getAdDao().findByPrimaryKey(id);
 		User user = DBManager.getInstance().getAdDao().findUserCreator(id);
 		List<Review> reviews = DBManager.getInstance().getAdDao().findReview(id);
 		
 		int statistics[] = ad.getStat(reviews); 
-		
+	
 		req.setAttribute("ad", ad);
 		req.setAttribute("user", user);
 		req.setAttribute("stat", statistics);
-		req.setAttribute("reviews", reviews);
+		
+		if(reviews.size()>0)
+			req.setAttribute("reviews", reviews);
+		
+		HttpSession session = req.getSession();
+		session.setAttribute("adSession", ad); //LA STAI USANDO PER NON MANDARE IN CRASH LA REVIEWADD
 		
 		RequestDispatcher rd = req.getRequestDispatcher("/adInfo.jsp");
 		rd.forward(req, resp);
 		
 	}
 	
-/*	@Override
+	/*@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}*/
+	
 }

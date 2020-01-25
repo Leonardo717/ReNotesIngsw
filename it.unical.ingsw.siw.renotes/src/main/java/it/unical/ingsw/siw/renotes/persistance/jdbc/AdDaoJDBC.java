@@ -332,4 +332,64 @@ public class AdDaoJDBC implements AdDao {
 		
 		return user;
 	}
+
+	//LA USO SOLO NELLA adList PER QUESTO TENGO SOLO ALCUNI CAMPI
+	//FALLA COSÌ DA VEDERE SOLO QUELLE DA ACQUISTARE E CHE NON SIANO DELL'UTENTE CORRENTE
+	public List<Ad> findAll() {
+		List<Ad> ads = new ArrayList<Ad>();
+		int previewId = 0;
+		Connection connection = null;
+		
+		try 
+		{
+			connection = dataSource.getConnection();
+			
+			String select = "select * from inserzione";
+			PreparedStatement stm = connection.prepareStatement(select);
+			
+			ResultSet result = stm.executeQuery();
+			
+			while(result.next())
+			{
+				Ad ad = new Ad();
+				ad.setId(result.getInt("inserzione_id"));
+				ad.setTitle(result.getString("titolo"));
+				ad.setSubject(result.getString("materia"));
+				ad.setPrice(result.getDouble("prezzo"));
+				ad.setFile(result.getString("file"));
+				previewId = result.getInt("anteprima");
+				
+				ads.add(ad);
+			}
+		} 
+		catch (SQLException e) {
+			if(connection != null)
+			{
+				try {
+					connection.rollback();
+				} catch (SQLException e1) {
+					
+					throw new RuntimeException(e.getMessage());
+				}
+			}	
+		}
+		finally
+		{
+			try {
+				connection.close();
+			} 
+			catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		
+		for(Ad ad: ads)
+		{
+			PreviewDaoJDBC previewDaoJDBC = new PreviewDaoJDBC(dataSource);
+			Preview preview = previewDaoJDBC.findByPrimaryKey(previewId);
+			ad.setPreview(preview);
+		}
+		
+		return ads;
+	}
 }

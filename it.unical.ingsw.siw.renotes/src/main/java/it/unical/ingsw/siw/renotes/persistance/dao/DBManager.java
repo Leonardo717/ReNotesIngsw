@@ -326,4 +326,26 @@ public class DBManager {
 			}
 		}	
 	}
+	
+	public void resetSerialReview() {
+		Connection connection = null;
+		
+		try {
+			connection = this.dataSource.getConnection();
+			PreparedStatement statement;
+			String query = "select setval('\"valutazione_valutazioneId_seq\"',1,false)";
+			statement = connection.prepareStatement(query);
+
+			statement.executeQuery();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}	
+	}
 }

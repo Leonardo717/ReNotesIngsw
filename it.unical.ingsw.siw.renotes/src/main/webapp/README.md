@@ -1,70 +1,116 @@
-# [Start Bootstrap - SB Admin](https://startbootstrap.com/template-overviews/sb-admin/)
+[![Material Design for Bootstrap](https://mdbootstrap.com/wp-content/uploads/2018/03/landing-page.jpg)](https://mdbootstrap.com/freebies/jquery/landing-page/)
 
-[SB Admin](http://startbootstrap.com/template-overviews/sb-admin/) is an open source, admin dashboard template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
+# Bootstrap 4 & Material Design - Landing Page Template 
 
-## Preview
+Free, responsive Landing Page template containing stunning, full or half-page Intro, Call to Action Buttons, Forms, and many other crucial components. Built with the newest Bootstrap 4 and Material Design. MIT license – free for personal and commercial use.
 
-[![SB Admin Preview](https://startbootstrap.com/assets/img/templates/sb-admin.jpg)](https://blackrockdigital.github.io/startbootstrap-sb-admin/)
+________
 
-**[View Live Preview](https://blackrockdigital.github.io/startbootstrap-sb-admin/)**
+# Live Previews: 
+## https://mdbootstrap.com/freebies/jquery/landing-page/
 
-## Status
+# Most important features:
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/BlackrockDigital/startbootstrap-sb-admin/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-sb-admin.svg)](https://www.npmjs.com/package/startbootstrap-sb-admin)
-[![Build Status](https://travis-ci.org/BlackrockDigital/startbootstrap-sb-admin.svg?branch=master)](https://travis-ci.org/BlackrockDigital/startbootstrap-sb-admin)
-[![dependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin/status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin)
-[![devDependencies Status](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin/dev-status.svg)](https://david-dm.org/BlackrockDigital/startbootstrap-sb-admin?type=dev)
+1. Fully responsive
 
-## Download and Installation
+2. Plenty of useful components
 
-To begin using this template, choose one of the following options to get started:
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/template-overviews/sb-admin/)
-* Install via npm: `npm i startbootstrap-sb-admin`
-* Clone the repo: `git clone https://github.com/BlackrockDigital/startbootstrap-sb-admin.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
+3. Easy installation
 
-## Usage
+4. Easy to use and customize
 
-### Basic Usage
+5. Active community
 
-After downloading, simply edit the HTML and CSS files included with the template in your favorite text editor to make changes. These are the only files you need to worry about, you can ignore everything else! To preview the changes you make to the code, you can open the `index.html` file in your web browser.
+6. Dedicated support forum
 
-### Advanced Usage
+7. Detailed documentation
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+# Demo:  
+**Main demo**: https://mdbootstrap.com/previews/free-templates/landing-page/form.html
 
-#### Gulp Tasks
+# MDB Quick Start (5 minutes):
+**Written Tutorial**: https://mdbootstrap.com/education/bootstrap/quick-start/
 
-- `gulp` the default task that builds everything
-- `gulp dev` browserSync opens the project in your default browser and live reloads when changes are made
-- `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-- `gulp js` minifies the themes JS file
-- `gulp vendor` copies dependencies from node_modules to the vendor directory
+**Video Tutorial**:https://www.youtube.com/watch?v=cXTThxoywNQ&t=9s
 
-## Bugs and Issues
+**npm installation**
+You can install MDBootstrap using NPM:
+- `npm install mdbootstrap`
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/BlackrockDigital/startbootstrap-sb-admin/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](http://startbootstrap.com/template-overviews/sb-admin/).
+# Additional tutorials:
 
-## Custom Builds
+**MDB - Bootstrap tutorial**: https://mdbootstrap.com/education/bootstrap/
 
-You can hire Start Bootstrap to create a custom build of any template, or create something from scratch using Bootstrap. For more information, visit the **[custom design services page](https://startbootstrap.com/bootstrap-design-services/)**.
+**MDB - Wordpress tutorial**: https://mdbootstrap.com/education/wordpress/
 
-## About
+# Documentation:
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+**Huge, detailed documentation avilable online on**: https://mdbootstrap.com/
 
-* https://startbootstrap.com
-* https://twitter.com/SBootstrap
+# PRO version:
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**, Owner of [Blackrock Digital](http://blackrockdigital.io/).
+**MDB Landing Page Template Pro (jQuery version)**: https://mdbootstrap.com/products/jquery-landing-page/
 
-* http://davidmiller.io
-* https://twitter.com/davidmillerskt
-* https://github.com/davidtmiller
+# Highlights:  
+**Bootstrap 4**  
+Thanks to MDB you can take advantage of all feature of newest Bootstrap 4.
 
-Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+**Material Design for Bootstrap**  
+This template is built with MDBootstrap - powerful and free UI Kit, containing 400+ material UI elements, 600+ material icons, 74 CSS animations, SASS files, templates, tutorials and many more.  
 
-## Copyright and License
+**Free for personal and commercial use**  
+Our license is user-friendly. Feel free to use MDB for both private as well as commercial projects.   
 
-Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/gh-pages/LICENSE) license.
+**10 fresh ready to use templates**  
+We are going further and giving to you ready to use templates! Use them as you like, as an inspiration, prototype or final product for your customers.  
+
+**Fully responsive**  
+It doesn't matter whether your project will be displayed on desktop, laptop, tablet or mobile phone. MDB looks great on each screen.
+
+**Technical support**  
+We really care about reliability. If you have any questions - do not hesitate to contact us.  
+
+**Active community**  
+Our society grows day by day. Visit **our forum** and check how it is to be a part of our family.  
+
+**Flex box**  
+MDB fully suppports Flex Box. You can forget about alignment issues.  
+
+**Latest jQuery**  
+MDB is integrated with newest jQuery, therefore you can use all the newest features which comes along with it.  
+
+**Detailed documentation:**  
+We give you detailed documentation at your disposal. It will help you to implement your ideas easily.  
+
+A big **thank you to all our users** who are working with us to improve the software. We wouldn't be where we are without you.  
+
+# Useful Links:  
+
+Getting started: https://mdbootstrap.com/docs/jquery/getting-started/download/  
+
+5 min quick start: https://mdbootstrap.com/education/bootstrap/quick-start/  
+
+Material Design + Bootstrap Tutorial: https://mdbootstrap.com/education/bootstrap/  
+
+Material Design + WordPress Tutorial: https://mdbootstrap.com/education/wordpress/  
+
+Other Freebies: https://mdbootstrap.com/freebies/  
+
+Premium Templates: https://mdbootstrap.com/templates/  
+
+
+# Social Media:  
+
+Twitter: https://twitter.com/MDBootstrap  
+
+Facebook: https://www.facebook.com/mdbootstrap  
+
+Pinterest: https://pl.pinterest.com/mdbootstrap 
+
+Google+: https://plus.google.com/u/0/b/107863090883699620484/+Mdbootstrap/posts  
+
+Dribbble: https://dribbble.com/mdbootstrap
+
+LinkedIn: https://www.linkedin.com/company/material-design-for-bootstrap
+
+# Visit our website: https://mdbootstrap.com/
